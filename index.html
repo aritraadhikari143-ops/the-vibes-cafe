@@ -3,189 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vibes Cafe & Resturant | Open-Air Rooftop Cafe</title>
+    <title>The Vibes Cafe & Restaurant | Rooftop Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #ff4757;
             --accent: #ffa502;
-            --bg: #0f1016;
-            --card-bg: #1a1c24;
-            --text: #ffffff;
-            --subtext: #a4b0be;
-            --wa-green: #2ed573;
+            --bg: #0b0f19;
+            --surface: #151b2b;
+            --card-bg: #1c2438;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --wa-green: #25d366;
+            --upi-purple: #5f259f;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg);
-            color: var(--text);
-            padding-bottom: 100px;
+            color: var(--text-main);
+            padding-bottom: 140px;
         }
 
-        /* Hero Banner with Rooftop Ambiance */
+        /* Hero Header with Rooftop Night Ambiance Background */
         .hero {
             position: relative;
-            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(15,16,22,1) 100%),
-                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            padding: 50px 20px 30px;
+            background: linear-gradient(180deg, rgba(11, 15, 25, 0.55) 0%, rgba(11, 15, 25, 0.95) 100%), 
+                        url('cafe-bg.jpg'),
+                        url('https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=1000&q=80');
+            background-position: top center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 42px 16px 26px;
             text-align: center;
+            border-bottom: 1px solid var(--border);
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(10px);
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .pill-badge {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #ffd32a;
-            border: 1px solid rgba(255, 211, 42, 0.3);
-            margin-bottom: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .pill-badge.open-badge {
+            background: rgba(46, 213, 115, 0.25);
+            color: #2ed573;
+            border-color: rgba(46, 213, 115, 0.5);
         }
 
         .hero h1 {
             font-size: 32px;
             font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #ff6b81, #ffa502);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
         }
 
         .hero p {
-            color: var(--subtext);
-            font-size: 14px;
-            margin-top: 6px;
+            font-size: 13px;
+            color: #e2e8f0;
+            margin-bottom: 16px;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.9);
         }
 
         .quick-actions {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 18px;
+            gap: 10px;
         }
 
-        .btn-call {
-            background: var(--primary);
-            color: #fff;
-            padding: 8px 18px;
-            border-radius: 25px;
+        .action-chip {
+            padding: 8px 16px;
+            background: rgba(21, 27, 43, 0.88);
+            backdrop-filter: blur(10px);
+            color: var(--text-main);
             text-decoration: none;
+            border-radius: 12px;
             font-size: 13px;
-            font-weight: bold;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.18);
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
         }
 
-        /* Category Filter Tabs */
-        .category-tabs {
+        /* Sticky Category Tabs */
+        .category-wrapper {
+            position: sticky;
+            top: 0;
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 100;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
             display: flex;
-            gap: 10px;
-            padding: 15px 20px;
+            gap: 8px;
             overflow-x: auto;
-            white-space: nowrap;
             scrollbar-width: none;
         }
-        .category-tabs::-webkit-scrollbar { display: none; }
 
-        .tab-btn {
-            background: var(--card-bg);
-            border: 1px solid #2f3542;
-            color: var(--subtext);
-            padding: 8px 16px;
+        .category-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-tab {
+            padding: 7px 15px;
+            background: var(--surface);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
+            white-space: nowrap;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.2s ease;
         }
 
-        .tab-btn.active {
-            background: var(--accent);
-            color: #000;
-            border-color: var(--accent);
+        .cat-tab.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
         }
 
-        /* Menu Items */
+        /* Menu List */
         .menu-container {
-            padding: 10px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 14px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .menu-card {
             background: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 14px;
+            padding: 12px 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid #232733;
-            transition: transform 0.2s;
         }
 
-        .menu-card:active {
-            transform: scale(0.98);
-        }
-
-        .item-info h4 {
-            font-size: 15px;
-            font-weight: 600;
+        .item-details h3 {
+            font-size: 14px;
+            font-weight: 700;
             margin-bottom: 4px;
         }
 
         .item-price {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--accent);
         }
 
-        .add-cart-btn {
-            background: rgba(255, 165, 2, 0.15);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: bold;
+        .btn-add {
+            background: rgba(255, 71, 87, 0.15);
+            color: var(--primary);
+            border: 1px solid rgba(255, 71, 87, 0.4);
+            padding: 7px 16px;
+            border-radius: 10px;
             font-size: 13px;
+            font-weight: 700;
             cursor: pointer;
-            transition: 0.2s;
         }
 
-        .add-cart-btn:active {
-            background: var(--accent);
-            color: #000;
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            background: var(--surface);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        /* Sticky WhatsApp Floating Cart Bar */
+        .qty-btn {
+            background: transparent;
+            color: #fff;
+            border: none;
+            padding: 6px 11px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .qty-val {
+            font-size: 13px;
+            font-weight: 700;
+            min-width: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Floating Cart Bar */
         .cart-bar {
             position: fixed;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            background: #1e222d;
+            bottom: 25px;
+            left: 14px;
+            right: 14px;
+            max-width: 570px;
+            margin: 0 auto;
+            background: #172033;
             border-radius: 16px;
             padding: 12px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            z-index: 100;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            backdrop-filter: blur(10px);
         }
 
         .cart-info {
@@ -194,8 +247,10 @@
         }
 
         .cart-count {
-            font-size: 12px;
-            color: var(--subtext);
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         .cart-total {
@@ -204,186 +259,434 @@
             color: #fff;
         }
 
-        .wa-btn {
-            background: var(--wa-green);
-            color: #000;
+        .btn-order {
+            background: linear-gradient(135deg, var(--wa-green) 0%, #1ea952 100%);
+            color: #fff;
             border: none;
-            padding: 10px 18px;
+            padding: 11px 18px;
             border-radius: 12px;
-            font-weight: 700;
             font-size: 14px;
-            cursor: pointer;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 6px;
+            cursor: pointer;
         }
 
-        /* Footer Credit */
-        .credit {
+        /* Payment & Order Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .modal-content {
+            background: var(--surface);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 24px 24px 0 0;
+            border-top: 1px solid var(--border);
+            padding: 22px 18px 30px;
+            animation: slideUp 0.25s ease-out;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .close-modal {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .upi-box {
+            background: var(--card-bg);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            padding: 14px;
             text-align: center;
-            margin-top: 30px;
+            margin-bottom: 14px;
+        }
+
+        .upi-owner-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2ed573;
+            margin-bottom: 4px;
+        }
+
+        .upi-id-label {
             font-size: 12px;
-            color: #57606f;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .upi-id-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            user-select: all;
+        }
+
+        .btn-copy {
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 6px;
+        }
+
+        .pay-upi-btn {
+            background: linear-gradient(135deg, var(--upi-purple), #833471);
+            color: #fff;
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .modal-divider {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            margin: 14px 0;
+            position: relative;
+        }
+
+        .modal-divider::before, .modal-divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 32%;
+            height: 1px;
+            background: var(--border);
+        }
+        .modal-divider::before { left: 0; }
+        .modal-divider::after { right: 0; }
+
+        .btn-send-wa {
+            background: var(--wa-green);
+            color: #fff;
+            width: 100%;
+            border: none;
+            padding: 13px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .footer-credit {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 12px;
+            color: #475569;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero / Rooftop Header -->
+    <!-- Hero Header -->
     <header class="hero">
-        <div class="badge">⭐ 5.0 Google Rating (Rooftop Vibes)</div>
+        <div class="badge-row">
+            <span class="pill-badge">⭐ 5.0 Google Rating</span>
+            <span class="pill-badge open-badge">🟢 Open Everyday</span>
+        </div>
         <h1>The Vibes</h1>
-        <p>Cafe & Resturant • Good Food, Good Mood Always</p>
+        <p>Cafe & Restaurant • Good Food, Good Mood Always</p>
+
         <div class="quick-actions">
-            <a class="btn-call" href="tel:8167315603">📞 Call: 8167315603</a>
+            <a class="action-chip" href="tel:8167315603">📞 Call Cafe</a>
+            <a class="action-chip" href="https://maps.google.com/?q=The+Vibes+Cafe+Mallikapur" target="_blank">📍 Directions</a>
         </div>
     </header>
 
-    <!-- Category Tabs -->
-    <div class="category-tabs">
-        <button class="tab-btn active" onclick="filterMenu('all')">All</button>
-        <button class="tab-btn" onclick="filterMenu('starter')">Momo & Starters</button>
-        <button class="tab-btn" onclick="filterMenu('rolls')">Rolls</button>
-        <button class="tab-btn" onclick="filterMenu('main')">Main Course</button>
-        <button class="tab-btn" onclick="filterMenu('soup')">Soup</button>
-        <button class="tab-btn" onclick="filterMenu('beverage')">Chai & Coffee</button>
+    <!-- Sticky Category Tabs -->
+    <div class="category-wrapper" id="categoryContainer">
+        <button class="cat-tab active" onclick="filterMenu('all')">All Items</button>
+        <button class="cat-tab" onclick="filterMenu('starter')">Starters & Momo</button>
+        <button class="cat-tab" onclick="filterMenu('rolls')">Rolls</button>
+        <button class="cat-tab" onclick="filterMenu('maincourse')">Main Course</button>
+        <button class="cat-tab" onclick="filterMenu('soup')">Soups</button>
+        <button class="cat-tab" onclick="filterMenu('beverage')">Beverages</button>
     </div>
 
-    <!-- Menu Items List -->
-    <div class="menu-container" id="menu-items">
+    <!-- Menu List -->
+    <main class="menu-container" id="menuList">
         <!-- Rendered via JavaScript -->
-    </div>
+    </main>
 
-    <div class="credit">
+    <div class="footer-credit">
         Designed & Powered by অরিত্র অধিকারী
     </div>
 
-    <!-- Sticky Cart Bar -->
-    <div class="cart-bar">
+    <!-- Floating Cart Bar -->
+    <div class="cart-bar" id="cartBar">
         <div class="cart-info">
-            <span class="cart-count" id="cart-count">0 items added</span>
-            <span class="cart-total" id="cart-total">₹0</span>
+            <span class="cart-count" id="cartCount">0 items added</span>
+            <span class="cart-total" id="cartTotal">₹0</span>
         </div>
-        <button class="wa-btn" onclick="sendOrderWhatsApp()">
-            <span>Send Order</span> 💬
+        <button class="btn-order" onclick="openOrderModal()">
+            Proceed to Pay 💳
         </button>
     </div>
 
+    <!-- Payment & WhatsApp Modal -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Checkout & Payment</h2>
+                <button class="close-modal" onclick="closeOrderModal()">✕</button>
+            </div>
+
+            <div class="upi-box">
+                <div class="upi-owner-name">✅ Verified Payee: JAYANTO BAIN</div>
+                <div class="upi-id-label">Pay via PhonePe / GPay / Paytm UPI:</div>
+                <div>
+                    <span class="upi-id-value" id="upiId">jayantobain85@axl</span>
+                    <button class="btn-copy" onclick="copyUpi()">📋 Copy</button>
+                </div>
+                <a id="directUpiLink" href="#" class="pay-upi-btn">
+                    ⚡ Pay via UPI App (<span id="modalAmount">₹0</span>)
+                </a>
+            </div>
+
+            <div class="modal-divider">THEN CONFIRM ORDER</div>
+
+            <button class="btn-send-wa" onclick="sendOrderWhatsApp()">
+                <span>💬 Send Order & Screenshot to WhatsApp</span>
+            </button>
+            <div style="font-size: 11px; text-align: center; color: var(--text-muted); margin-top: 8px;">
+                Order goes directly to The Vibes Cafe WhatsApp.
+            </div>
+        </div>
+    </div>
+
     <script>
-        const cafePhone = "918167315603";
+        // Exact Menu Database from The Vibes Menu Card
+        const menuItems = [
+            // SOUP
+            { id: 1, name: "Chicken Lemon Coriander Soup", price: 70, category: "soup" },
+            { id: 2, name: "Chicken Manchow Soup", price: 70, category: "soup" },
+            { id: 3, name: "Chicken Hot & Sour Soup", price: 70, category: "soup" },
+            { id: 4, name: "Chicken Sweet Corn Soup", price: 80, category: "soup" },
 
-        // Accurate items extracted from menu cards
-        const menuData = [
-            // Starters & Momos
-            { id: 1, name: "Chicken Cheese Kurkure Momo (6)", price: 70, cat: "starter" },
-            { id: 2, name: "Pan Fried Momos (8)", price: 100, cat: "starter" },
-            { id: 3, name: "Cheesy Creamy Momo (8)", price: 150, cat: "starter" },
-            { id: 4, name: "Crispy Chicken", price: 200, cat: "starter" },
-            { id: 5, name: "Drums of Heaven (6)", price: 180, cat: "starter" },
-            { id: 6, name: "Peri Peri French Fries", price: 80, cat: "starter" },
+            // STARTERS & MOMOS
+            { id: 5, name: "Chicken Cheese Kurkure Momo (6 Pcs)", price: 70, category: "starter" },
+            { id: 6, name: "Chicken Cheese Fried Momo (6 Pcs)", price: 50, category: "starter" },
+            { id: 7, name: "Pan Fried Momos (8 Pcs)", price: 100, category: "starter" },
+            { id: 8, name: "Oil Fried Momo (8 Pcs)", price: 100, category: "starter" },
+            { id: 9, name: "Cheesy Creamy Momo (8 Pcs)", price: 150, category: "starter" },
+            { id: 10, name: "French Fries", price: 60, category: "starter" },
+            { id: 11, name: "Peri Peri French Fries", price: 80, category: "starter" },
+            { id: 12, name: "Chicken Popcorn", price: 70, category: "starter" },
+            { id: 13, name: "Chicken Pakoda (8 Pcs)", price: 100, category: "starter" },
+            { id: 14, name: "Chicken Lolipop (6 Pcs)", price: 150, category: "starter" },
+            { id: 15, name: "Drums of Heaven (6 Pcs)", price: 180, category: "starter" },
+            { id: 16, name: "Chicken Wings Indo Chilli Sauce (6 Pcs)", price: 180, category: "starter" },
+            { id: 17, name: "Chicken Nuggets (6 Pcs)", price: 100, category: "starter" },
+            { id: 18, name: "Crispy Chicken", price: 200, category: "starter" },
+            { id: 19, name: "Dragon Chicken (8 Pcs)", price: 180, category: "starter" },
 
-            // Rolls
-            { id: 7, name: "Egg Chicken Laccha Roll", price: 80, cat: "rolls" },
-            { id: 8, name: "Egg Laccha Roll", price: 60, cat: "rolls" },
-            { id: 9, name: "Egg Roll", price: 40, cat: "rolls" },
-            { id: 10, name: "Chicken Sanghai Spring Roll (2)", price: 100, cat: "rolls" },
+            // ROLLS
+            { id: 20, name: "Chicken Shanghai Spring Roll (2 Pcs)", price: 100, category: "rolls" },
+            { id: 21, name: "Egg Roll", price: 40, category: "rolls" },
+            { id: 22, name: "Egg Laccha Roll", price: 60, category: "rolls" },
+            { id: 23, name: "Egg Chicken Laccha Roll", price: 80, category: "rolls" },
 
-            // Main Course
-            { id: 11, name: "Egg Chicken Hakka Noodles", price: 130, cat: "main" },
-            { id: 12, name: "Egg Chicken Chowmin", price: 150, cat: "main" },
-            { id: 13, name: "Egg Chicken Fried Rice", price: 130, cat: "main" },
-            { id: 14, name: "Chicken Biryani", price: 140, cat: "main" },
-            { id: 15, name: "Butter Chicken (6)", price: 220, cat: "main" },
-            { id: 16, name: "Chilli Chicken (8)", price: 180, cat: "main" },
+            // MAIN COURSE
+            { id: 24, name: "Egg Hakka Noodles", price: 100, category: "maincourse" },
+            { id: 25, name: "Egg Chicken Hakka Noodles", price: 130, category: "maincourse" },
+            { id: 26, name: "Egg Chicken Chowmin", price: 150, category: "maincourse" },
+            { id: 27, name: "Egg Chicken Shejwan Noodles", price: 180, category: "maincourse" },
+            { id: 28, name: "Chilli Garlic Noodles", price: 180, category: "maincourse" },
+            { id: 29, name: "Egg Fried Rice", price: 100, category: "maincourse" },
+            { id: 30, name: "Egg Chicken Fried Rice", price: 130, category: "maincourse" },
+            { id: 31, name: "Chilli Chicken (8 Pcs)", price: 180, category: "maincourse" },
+            { id: 32, name: "Chicken Manchurian (8 Pcs)", price: 180, category: "maincourse" },
+            { id: 33, name: "Chicken 65 (8 Pcs)", price: 180, category: "maincourse" },
+            { id: 34, name: "Butter Chicken (6 Pcs)", price: 220, category: "maincourse" },
+            { id: 35, name: "Chicken Kosa (6 Pcs)", price: 200, category: "maincourse" },
+            { id: 36, name: "Egg Chicken Biryani", price: 150, category: "maincourse" },
+            { id: 37, name: "Chicken Biryani", price: 140, category: "maincourse" },
 
-            // Soup
-            { id: 17, name: "Chicken Lemon Coriander Soup", price: 70, cat: "soup" },
-            { id: 18, name: "Chicken Hot & Sour Soup", price: 70, cat: "soup" },
-            { id: 19, name: "Chicken Sweet Corn Soup", price: 80, cat: "soup" },
-
-            // Beverages
-            { id: 20, name: "Special Bharer Tea", price: 10, cat: "beverage" },
-            { id: 21, name: "Hot Coffee", price: 30, cat: "beverage" },
-            { id: 22, name: "Cold Coffee with Ice Cream", price: 90, cat: "beverage" },
-            { id: 23, name: "Sweet Lassi", price: 35, cat: "beverage" }
+            // BEVERAGES
+            { id: 38, name: "Special Bharer Tea", price: 10, category: "beverage" },
+            { id: 39, name: "Hot Coffee", price: 30, category: "beverage" },
+            { id: 40, name: "Black Coffee", price: 20, category: "beverage" },
+            { id: 41, name: "Cold Coffee", price: 70, category: "beverage" },
+            { id: 42, name: "Cold Coffee with Ice Cream", price: 90, category: "beverage" },
+            { id: 43, name: "Sweet Lassi", price: 35, category: "beverage" }
         ];
 
         let cart = {};
+        let currentFilter = 'all';
+        const CAFE_PHONE = "918167315603";
+        const UPI_ID = "jayantobain85@axl";
+        const UPI_NAME = "JAYANTO BAIN";
 
         function renderMenu(items) {
-            const container = document.getElementById('menu-items');
+            const container = document.getElementById("menuList");
             container.innerHTML = "";
             items.forEach(item => {
-                const card = document.createElement('div');
+                const count = cart[item.id] || 0;
+                const card = document.createElement("div");
                 card.className = "menu-card";
                 card.innerHTML = `
-                    <div class="item-info">
-                        <h4>${item.name}</h4>
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
                         <div class="item-price">₹${item.price}</div>
                     </div>
-                    <button class="add-cart-btn" onclick="addToCart('${item.name}', ${item.price})">+ Add</button>
+                    <div>
+                        ${count === 0 ? 
+                            `<button class="btn-add" onclick="updateQty(${item.id}, 1)">+ Add</button>` :
+                            `<div class="qty-controls">
+                                <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                                <span class="qty-val">${count}</span>
+                                <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                            </div>`
+                        }
+                    </div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        function filterMenu(category) {
-            // Update active tab styling
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            if (category === 'all') {
-                renderMenu(menuData);
+        function filterMenu(cat) {
+            currentFilter = cat;
+            document.querySelectorAll(".cat-tab").forEach(tab => tab.classList.remove("active"));
+            event.target.classList.add("active");
+            if (cat === "all") {
+                renderMenu(menuItems);
             } else {
-                const filtered = menuData.filter(item => item.cat === category);
-                renderMenu(filtered);
+                renderMenu(menuItems.filter(item => item.category === cat));
             }
         }
 
-        function addToCart(name, price) {
-            if (cart[name]) {
-                cart[name].qty += 1;
+        function updateQty(id, delta) {
+            cart[id] = (cart[id] || 0) + delta;
+            if (cart[id] <= 0) delete cart[id];
+            
+            if (currentFilter === "all") {
+                renderMenu(menuItems);
             } else {
-                cart[name] = { price: price, qty: 1 };
+                renderMenu(menuItems.filter(i => i.category === currentFilter));
             }
-            updateCartUI();
+            updateCartSummary();
         }
 
-        function updateCartUI() {
-            let totalItems = 0;
+        function updateCartSummary() {
+            let totalQty = 0;
             let totalPrice = 0;
-            for (let item in cart) {
-                totalItems += cart[item].qty;
-                totalPrice += (cart[item].price * cart[item].qty);
+
+            for (const [id, qty] of Object.entries(cart)) {
+                const item = menuItems.find(i => i.id == id);
+                if (item) {
+                    totalQty += qty;
+                    totalPrice += (qty * item.price);
+                }
             }
-            document.getElementById('cart-count').innerText = `${totalItems} items added`;
-            document.getElementById('cart-total').innerText = `₹${totalPrice}`;
+
+            document.getElementById("cartCount").textContent = `${totalQty} item${totalQty !== 1 ? 's' : ''} added`;
+            document.getElementById("cartTotal").textContent = `₹${totalPrice}`;
+            document.getElementById("modalAmount").textContent = `₹${totalPrice}`;
+
+            const upiIntent = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(UPI_NAME)}&am=${totalPrice}&cu=INR&tn=The%20Vibes%20Cafe%20Order`;
+            document.getElementById("directUpiLink").href = upiIntent;
+        }
+
+        function openOrderModal() {
+            let totalQty = Object.values(cart).reduce((a, b) => a + b, 0);
+            if (totalQty === 0) {
+                alert("Please add at least 1 item to proceed!");
+                return;
+            }
+            document.getElementById("orderModal").style.display = "flex";
+        }
+
+        function closeOrderModal() {
+            document.getElementById("orderModal").style.display = "none";
+        }
+
+        function copyUpi() {
+            navigator.clipboard.writeText(UPI_ID);
+            alert("UPI ID copied: " + UPI_ID);
         }
 
         function sendOrderWhatsApp() {
-            let totalItems = 0;
             let totalPrice = 0;
-            let orderText = "Hello *The Vibes Cafe*! 👋%0AI would like to place an order:%0A%0A";
+            let itemList = "";
 
-            for (let item in cart) {
-                totalItems += cart[item].qty;
-                let cost = cart[item].price * cart[item].qty;
-                totalPrice += cost;
-                orderText += `▪️ *${item}* x ${cart[item].qty} = ₹${cost}%0A`;
+            for (const [id, qty] of Object.entries(cart)) {
+                const item = menuItems.find(i => i.id == id);
+                if (item) {
+                    totalPrice += (qty * item.price);
+                    itemList += `▪ *${item.name}* x ${qty} = ₹${qty * item.price}%0A`;
+                }
             }
 
-            if (totalItems === 0) {
-                alert("Please add at least one item to cart first!");
-                return;
-            }
+            let msg = `Hello *The Vibes Cafe*! 👋%0A`;
+            msg += `I would like to place an order:%0A%0A`;
+            msg += itemList;
+            msg += `--------------------------%0A`;
+            msg += `*Total Bill: ₹${totalPrice}*%0A%0A`;
+            msg += `💳 *Paid To:* ${UPI_NAME} (${UPI_ID})%0A`;
+            msg += `(Payment screenshot attached / paying via UPI)`;
 
-            orderText += `%0A--------------------------%0A*Total Bill: ₹${totalPrice}*%0A%0APlease confirm my order.`;
-            window.open(`https://wa.me/${cafePhone}?text=${orderText}`, '_blank');
+            const waUrl = `https://wa.me/${CAFE_PHONE}?text=${msg}`;
+            window.open(waUrl, "_blank");
+            closeOrderModal();
         }
 
         // Initial Load
-        renderMenu(menuData);
+        renderMenu(menuItems);
+        updateCartSummary();
     </script>
 </body>
-  </html>
+    </html>
