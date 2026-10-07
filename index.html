@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Vibes Cafe & Restaurant | Rooftop Experience</title>
+    <title>The Vibes Cafe & Restaurant | Rooftop Experience Mallikapur</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="title" content="The Vibes Cafe & Restaurant | Rooftop Experience Mallikapur">
+    <meta name="description" content="Welcome to The Vibes Cafe & Restaurant in Mallikapur. Enjoy top rooftop ambiance, delicious momos, burgers, rolls, biryani, and coffee. Order online with UPI & WhatsApp delivery!">
+    <meta name="keywords" content="The Vibes Cafe, The Vibes Cafe Mallikapur, The Vibes Restaurant, Mallikapur Cafe, Rooftop Cafe in Mallikapur, Memari Cafe, The Vibes menu, digital menu, cafe rooftop Mallikapur">
+    <meta name="author" content="অরিত্র অধিকারী">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://the-vibes-cafe-mallikapur.netlify.app">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:url" content="https://the-vibes-cafe-mallikapur.netlify.app">
+    <meta property="og:title" content="The Vibes Cafe & Restaurant | Rooftop Ambiance">
+    <meta property="og:description" content="View our complete food menu and order directly via WhatsApp with easy UPI payment. Open Everyday!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://the-vibes-cafe-mallikapur.netlify.app">
+    <meta property="twitter:title" content="The Vibes Cafe & Restaurant | Mallikapur">
+    <meta property="twitter:description" content="Rooftop ambiance, tasty momos, snacks & drinks. Order now via WhatsApp & UPI.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Structured Data (Schema JSON-LD for Search Engine) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Vibes Cafe & Restaurant",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "+918167315603",
+      "url": "https://the-vibes-cafe-mallikapur.netlify.app",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mallikapur",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "25"
+      },
+      "servesCuisine": ["Fast Food", "Chinese", "Beverages", "Snacks"],
+      "priceRange": "₹10 - ₹250"
+    }
+    </script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #ff4757;
@@ -35,16 +85,11 @@
             padding-bottom: 140px;
         }
 
-        /* Hero Header with Rooftop Night Ambiance Background */
+        /* Hero Header with Rooftop Night Ambiance */
         .hero {
             position: relative;
-            background: linear-gradient(180deg, rgba(11, 15, 25, 0.55) 0%, rgba(11, 15, 25, 0.95) 100%), 
-                        url('cafe-bg.jpg'),
-                        url('https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=1000&q=80');
-            background-position: top center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            padding: 42px 16px 26px;
+            background: radial-gradient(circle at 50% 0%, #2a344a 0%, #151b2b 60%, var(--bg) 100%);
+            padding: 34px 16px 22px;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
@@ -58,38 +103,38 @@
         }
 
         .pill-badge {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .pill-badge.open-badge {
-            background: rgba(46, 213, 115, 0.25);
+            background: rgba(46, 213, 115, 0.15);
             color: #2ed573;
-            border-color: rgba(46, 213, 115, 0.5);
+            border-color: rgba(46, 213, 115, 0.35);
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 6px;
-            color: #ffffff;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, #ffffff, #ffccd2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 13px;
-            color: #e2e8f0;
+            color: var(--text-muted);
             margin-bottom: 16px;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.9);
         }
 
         .quick-actions {
@@ -100,14 +145,13 @@
 
         .action-chip {
             padding: 8px 16px;
-            background: rgba(21, 27, 43, 0.88);
-            backdrop-filter: blur(10px);
+            background: var(--surface);
             color: var(--text-main);
             text-decoration: none;
             border-radius: 12px;
             font-size: 13px;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid var(--border);
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -273,7 +317,7 @@
             cursor: pointer;
         }
 
-        /* Payment & Order Modal */
+        /* Modal Overlay */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -432,14 +476,14 @@
 </head>
 <body>
 
-    <!-- Hero Header -->
+    <!-- Header Section -->
     <header class="hero">
         <div class="badge-row">
             <span class="pill-badge">⭐ 5.0 Google Rating</span>
             <span class="pill-badge open-badge">🟢 Open Everyday</span>
         </div>
         <h1>The Vibes</h1>
-        <p>Cafe & Restaurant • Good Food, Good Mood Always</p>
+        <p>Cafe & Restaurant • Rooftop Ambiance</p>
 
         <div class="quick-actions">
             <a class="action-chip" href="tel:8167315603">📞 Call Cafe</a>
@@ -689,4 +733,4 @@
         updateCartSummary();
     </script>
 </body>
-    </html>
+</html>
